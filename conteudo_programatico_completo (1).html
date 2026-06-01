@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conteúdo Programático Completo – TRT + MPU</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0c10;
+  --surface: #12151c;
+  --surface2: #1a1f2b;
+  --border: #232837;
+  --accent: #f0c040;
+  --blue: #4a90d9;
+  --teal: #2ec4b6;
+  --green: #3dbf7a;
+  --purple: #a78bfa;
+  --orange: #fb923c;
+  --red: #f87171;
+  --muted: #5a6478;
+  --text: #dde3f0;
+  --text-dim: #8892a8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.65;min-height:100vh}
+
+/* HEADER */
+header{position:relative;overflow:hidden;padding:60px 48px 48px;border-bottom:1px solid var(--border)}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 85% 40%,rgba(240,192,64,.07),transparent 65%),radial-gradient(ellipse 40% 60% at 5% 80%,rgba(46,196,182,.05),transparent 55%);pointer-events:none}
+.tag{display:inline-flex;align-items:center;gap:6px;background:rgba(240,192,64,.12);color:var(--accent);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 14px;border-radius:99px;border:1px solid rgba(240,192,64,.25);margin-bottom:20px}
+h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,60px);font-weight:800;line-height:1.05;color:#fff;letter-spacing:-.02em}
+h1 em{color:var(--accent);font-style:normal}
+.subtitle{margin-top:14px;color:var(--text-dim);font-size:15px;max-width:640px}
+.meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;color:var(--text-dim)}
+.chip strong{color:var(--teal)}
+
+/* LAYOUT */
+.container{max-width:1400px;margin:0 auto;padding:0 48px 80px}
+
+/* INTRO */
+.intro-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:40px 0}
+.intro-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px}
+.intro-card .num{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--accent);line-height:1}
+.intro-card .lbl{margin-top:4px;color:var(--text-dim);font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+
+/* SECTION */
+.section{margin-top:52px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.section-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:#fff}
+.section-sub{font-size:12px;color:var(--text-dim);margin-top:2px}
+.badge-freq{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;margin-left:auto;flex-shrink:0}
+
+/* TRIBUNAL CARDS */
+.trib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.trib-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;transition:border-color .2s}
+.trib-card:hover{border-color:var(--accent)}
+.trib-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#fff}
+.trib-estado{font-size:11px;color:var(--text-dim);margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
+.trib-cargo{margin-top:10px;font-size:12px;color:var(--text-dim);display:flex;gap:6px;flex-wrap:wrap}
+.cargo-tag{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:3px 8px;color:var(--blue);font-size:11px}
+.mpu-tag{color:var(--purple)}
+
+/* MATÉRIAS TABLE */
+.mat-table{width:100%;border-collapse:collapse;font-size:13px}
+.mat-table th{text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text-dim);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+.mat-table td{padding:10px 14px;border-bottom:1px solid rgba(35,40,55,.6)}
+.mat-table tr:last-child td{border-bottom:none}
+.mat-table tr:hover td{background:rgba(26,31,43,.5)}
+.mat-topic{color:var(--text);font-weight:400}
+.mat-sub{color:var(--text-dim);font-size:12px;margin-top:2px}
+.bar-wrap{width:100%;background:var(--surface2);border-radius:99px;height:6px;min-width:80px}
+.bar-fill{height:6px;border-radius:99px;background:var(--accent)}
+.freq-num{font-size:12px;color:var(--text-dim);white-space:nowrap}
+.trib-tags{display:flex;flex-wrap:wrap;gap:4px}
+.trib-tag{font-size:10px;padding:2px 6px;border-radius:4px;background:var(--surface2);border:1px solid var(--border);color:var(--text-dim)}
+
+/* COLLAPSIBLE */
+details{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
+details[open]{border-color:rgba(240,192,64,.3)}
+summary{padding:16px 20px;cursor:pointer;display:flex;align-items:center;gap:12px;list-style:none;user-select:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'›';margin-left:auto;font-size:18px;color:var(--text-dim);transform:rotate(90deg);transition:transform .2s}
+details[open] summary::after{transform:rotate(-90deg) scaleX(-1)}
+.sum-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#fff}
+.sum-count{font-size:11px;color:var(--text-dim)}
+.det-body{padding:0 20px 20px}
+.topic-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px}
+.topic-item{display:flex;align-items:flex-start;gap:8px;padding:7px 10px;background:var(--surface2);border-radius:8px;font-size:12px;color:var(--text-dim)}
+.topic-item::before{content:'·';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* LEGEND */
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+.leg-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-dim)}
+.leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);margin-top:60px;padding:32px 48px;color:var(--muted);font-size:12px;text-align:center}
+
+/* COLOR HELPERS */
+.c-dt{color:var(--blue)} .c-pdt{color:var(--teal)} .c-dc{color:var(--green)} .c-da{color:var(--orange)} .c-civil{color:var(--purple)} .c-ger{color:#e8a0d0} .c-mpu{color:var(--red)}
+.bg-10{background:rgba(240,192,64,.15);color:var(--accent)}
+.bg-9{background:rgba(74,144,217,.15);color:var(--blue)}
+.bg-7{background:rgba(46,196,182,.15);color:var(--teal)}
+.bg-5{background:rgba(61,191,122,.15);color:var(--green)}
+.bg-3{background:rgba(251,146,60,.15);color:var(--orange)}
+.bg-1{background:rgba(90,100,120,.15);color:var(--text-dim)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">📚 Guia de Estudos</div>
+  <h1>Conteúdo Programático<br><em>Completo</em> — TRT + MPU</h1>
+  <p class="subtitle">Todos os tópicos cobrados nos 10 editais analisados, organizados por matéria, frequência e tribunal.</p>
+  <div class="meta">
+    <div class="chip">⚖️ <strong>9</strong> TRTs analisados</div>
+    <div class="chip">🏛️ <strong>1</strong> MPU incluído</div>
+    <div class="chip">📋 <strong>120+</strong> tópicos mapeados</div>
+    <div class="chip">🎯 Analista e Técnico Judiciário</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- CARDS RESUMO -->
+  <div class="intro-grid">
+    <div class="intro-card"><div class="num">10</div><div class="lbl">Editais analisados</div></div>
+    <div class="intro-card"><div class="num">14</div><div class="lbl">Matérias mapeadas</div></div>
+    <div class="intro-card"><div class="num">120+</div><div class="lbl">Tópicos levantados</div></div>
+    <div class="intro-card"><div class="num">6</div><div class="lbl">Blocos de frequência</div></div>
+  </div>
+
+  <!-- TRIBUNAIS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(74,144,217,.15)">🏛️</div>
+      <div><div class="section-title">Tribunais Analisados</div><div class="section-sub">9 TRTs + MPU com cargos de Analista e Técnico Judiciário</div></div>
+    </div>
+    <div class="trib-grid">
+      <div class="trib-card"><div class="trib-name">TRT 1ª Região</div><div class="trib-estado">Rio de Janeiro — RJ</div><div class="trib-cargo"><span class="cargo-tag">Analista Judiciário</span></div></div>
+      <div class="trib-card"><div class="trib-name">TRT 2ª Região</div><div class="trib-estado">São Paulo — SP</div><div class="trib-cargo"><span class="cargo-tag">Analista Judiciário</span></div></div>
+      <div class="trib-card"><div class="trib-name">TRT 6ª Região</div><div class="trib-estado">Pernambuco — PE</div><div class="trib-cargo"><span class="cargo-tag">Analista Judiciário</span></div></div>
+      <div class="trib-card"><div class="trib-name">TRT 7ª Região</div><div class="trib-estado">Ceará — CE</div><div class="trib-cargo"><span class="cargo-tag">Analista Judiciário</span></div></div>
+      <div class="trib-card"><div class="trib-name">TRT 10ª Região</div><div class="trib-estado">DF / Tocantins — DF/TO</div><div class="trib-cargo"><span class="cargo-tag">Analista Judiciário</span></div></div>
+      <div class="trib-card"><div class="trib-name">TRT 15ª Região</div><div class="trib-estado">Campinas — SP</div><div class="trib-cargo"><span class="cargo-tag">Analista Judiciário</span></div></div>
+      <div class="trib-card"><div class="trib-name">TRT 20ª Região</div><div class="trib-estado">Sergipe — SE</div><div class="trib-cargo"><span class="cargo-tag">Analista Judiciário</span></div></div>
+      <div class="trib-card"><div class="trib-name">TRT 24ª Região — AJAJ</div><div class="trib-estado">Mato Grosso do Sul — MS</div><div class="trib-cargo"><span class="cargo-tag">Analista Judiciário</span></div></div>
+      <div class="trib-card"><div class="trib-name">TRT 24ª Região — TA</div><div class="trib-estado">Mato Grosso do Sul — MS</div><div class="trib-cargo"><span class="cargo-tag">Técnico Administrativo</span></div></div>
+      <div class="trib-card" style="border-color:rgba(167,139,250,.3)"><div class="trib-name">MPU</div><div class="trib-estado">Nacional — Ministério Público da União</div><div class="trib-cargo"><span class="cargo-tag mpu-tag">Analista — Área Processual</span></div></div>
+    </div>
+  </div>
+
+  <!-- FREQUÊNCIA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(240,192,64,.15)">📊</div>
+      <div><div class="section-title">Ranking de Frequência por Matéria</div><div class="section-sub">Quantos dos 10 editais cobram cada matéria</div></div>
+    </div>
+    <table class="mat-table">
+      <thead><tr><th>Matéria</th><th>Frequência</th><th>Presença</th><th>Tribunais</th></tr></thead>
+      <tbody>
+        <tr><td><div class="mat-topic c-dt">Direito do Trabalho</div></td><td><span class="badge-freq bg-10">10/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Todos</span></div></td></tr>
+        <tr><td><div class="mat-topic c-pdt">Direito Processual do Trabalho</div></td><td><span class="badge-freq bg-10">10/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Todos</span></div></td></tr>
+        <tr><td><div class="mat-topic c-dc">Direito Constitucional</div></td><td><span class="badge-freq bg-10">10/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Todos</span></div></td></tr>
+        <tr><td><div class="mat-topic c-da">Direito Administrativo</div></td><td><span class="badge-freq bg-10">10/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Todos</span></div></td></tr>
+        <tr><td><div class="mat-topic c-civil">Direito Civil</div></td><td><span class="badge-freq bg-10">10/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Todos</span></div></td></tr>
+        <tr><td><div class="mat-topic c-civil">Direito Processual Civil</div></td><td><span class="badge-freq bg-10">10/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Todos</span></div></td></tr>
+        <tr><td><div class="mat-topic c-ger">Língua Portuguesa</div></td><td><span class="badge-freq bg-10">10/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Todos</span></div></td></tr>
+        <tr><td><div class="mat-topic c-ger">Raciocínio Lógico / Matemática</div></td><td><span class="badge-freq bg-10">10/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Todos</span></div></td></tr>
+        <tr><td><div class="mat-topic c-da">Lei 8.112/90 — Regime Jurídico</div></td><td><span class="badge-freq bg-9">9/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:90%;background:var(--blue)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">TRT 1,2,6,7,10,15,20,24</span><span class="trib-tag">MPU</span></div></td></tr>
+        <tr><td><div class="mat-topic c-da">LINDB</div></td><td><span class="badge-freq bg-9">9/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:90%;background:var(--blue)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">TRT 1,2,6,7,10,15,20,24</span><span class="trib-tag">MPU</span></div></td></tr>
+        <tr><td><div class="mat-topic c-da">Lei de Acesso à Informação (LAI)</div></td><td><span class="badge-freq bg-9">9/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:90%;background:var(--blue)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Maioria dos TRTs</span><span class="trib-tag">MPU</span></div></td></tr>
+        <tr><td><div class="mat-topic c-dc">Direitos Humanos e Fundamentais</div></td><td><span class="badge-freq bg-9">9/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:90%;background:var(--blue)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">Maioria dos TRTs</span></div></td></tr>
+        <tr><td><div class="mat-topic c-ger">Informática / TI</div></td><td><span class="badge-freq bg-7">8/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:80%;background:var(--teal)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">TRT 2,6,7,10,15,20,24</span><span class="trib-tag">MPU</span></div></td></tr>
+        <tr><td><div class="mat-topic c-da">Sustentabilidade / Meio Ambiente</div></td><td><span class="badge-freq bg-7">7/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:70%;background:var(--teal)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">TRT 2,6,7,15,20,24</span></div></td></tr>
+        <tr><td><div class="mat-topic c-da">Código de Ética / Conduta</div></td><td><span class="badge-freq bg-7">7/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:70%;background:var(--teal)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">TRT 2,7,10,15,20,24</span></div></td></tr>
+        <tr><td><div class="mat-topic c-pdt">IRDR / IAC — Precedentes</div></td><td><span class="badge-freq bg-7">7/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:70%;background:var(--teal)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">TRT 1,2,6,7,10,15,24</span></div></td></tr>
+        <tr><td><div class="mat-topic c-da">Teses de Repercussão Geral (STF)</div></td><td><span class="badge-freq bg-5">5/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:50%;background:var(--green)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">TRT 2,15</span><span class="trib-tag">MPU</span></div></td></tr>
+        <tr><td><div class="mat-topic" style="color:var(--red)">Dir. Penal / Penal Militar</div></td><td><span class="badge-freq bg-3">3/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:30%;background:var(--orange)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">MPU</span><span class="trib-tag">TRT 2</span></div></td></tr>
+        <tr><td><div class="mat-topic" style="color:var(--red)">Direito Ambiental</div></td><td><span class="badge-freq bg-3">3/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:30%;background:var(--orange)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">MPU</span></div></td></tr>
+        <tr><td><div class="mat-topic c-da">Legislação Institucional MPU</div></td><td><span class="badge-freq bg-1">1/10</span></td><td><div class="bar-wrap"><div class="bar-fill" style="width:10%;background:var(--muted)"></div></div></td><td><div class="trib-tags"><span class="trib-tag">MPU</span></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CONTEÚDO DETALHADO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(46,196,182,.15)">📖</div>
+      <div><div class="section-title">Conteúdo Programático Detalhado</div><div class="section-sub">Clique em cada matéria para expandir os tópicos</div></div>
+    </div>
+
+    <!-- Direito do Trabalho -->
+    <details open>
+      <summary>
+        <div class="section-icon" style="background:rgba(74,144,217,.15);width:32px;height:32px;font-size:14px">⚖️</div>
+        <div><div class="sum-title c-dt">Direito do Trabalho</div><div class="sum-count">25 tópicos · 10/10 editais</div></div>
+        <span class="badge-freq bg-10" style="margin-left:auto">Essencial</span>
+      </summary>
+      <div class="det-body">
+        <div class="topic-list">
+          <div class="topic-item">Princípios do Direito do Trabalho</div>
+          <div class="topic-item">Fontes e Hierarquia das Normas Trabalhistas</div>
+          <div class="topic-item">Contrato Individual de Trabalho</div>
+          <div class="topic-item">Modalidades de Contrato (prazo determinado, indeterminado, intermitente)</div>
+          <div class="topic-item">Relação de Emprego x Relação de Trabalho</div>
+          <div class="topic-item">Empregado e Empregador — conceitos e obrigações</div>
+          <div class="topic-item">Grupo Econômico e Sucessão de Empregadores</div>
+          <div class="topic-item">Terceirização — Lei 13.429/2017</div>
+          <div class="topic-item">Remuneração, Salário e suas espécies</div>
+          <div class="topic-item">Jornada de Trabalho — regras e limitações</div>
+          <div class="topic-item">Horas Extras, Banco de Horas e Compensação</div>
+          <div class="topic-item">Descanso Semanal Remunerado (DSR)</div>
+          <div class="topic-item">Férias — individuais e coletivas</div>
+          <div class="topic-item">13º Salário (Gratificação Natalina)</div>
+          <div class="topic-item">FGTS — regras e saques</div>
+          <div class="topic-item">Aviso Prévio</div>
+          <div class="topic-item">Dispensa sem justa causa, por justa causa e indireta</div>
+          <div class="topic-item">Estabilidade e Garantias de Emprego</div>
+          <div class="topic-item">Trabalho da Mulher — proteções específicas</div>
+          <div class="topic-item">Trabalho do Menor</div>
+          <div class="topic-item">Trabalho Doméstico — LC 150/2015</div>
+          <div class="topic-item">Trabalho Intermitente</div>
+          <div class="topic-item">Teletrabalho / Home Office</div>
+          <div class="topic-item">Reforma Trabalhista — Lei 13.467/2017</div>
+          <div class="topic-item">Segurança e Medicina do Trabalho</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Processual do Trabalho -->
+    <details>
+      <summary>
+        <div class="section-icon" style="background:rgba(46,196,182,.15);width:32px;height:32px;font-size:14px">🔨</div>
+        <div><div class="sum-title c-pdt">Direito Processual do Trabalho</div><div class="sum-count">27 tópicos · 10/10 editais</div></div>
+        <span class="badge-freq bg-10" style="margin-left:auto">Essencial</span>
+      </summary>
+      <div class="det-body">
+        <div class="topic-list">
+          <div class="topic-item">Organização da Justiça do Trabalho</div>
+          <div class="topic-item">Competência da Justiça do Trabalho</div>
+          <div class="topic-item">Princípios do Processo do Trabalho</div>
+          <div class="topic-item">Partes e Procuradores no Processo do Trabalho</div>
+          <div class="topic-item">Atos, Termos e Prazos Processuais</div>
+          <div class="topic-item">Dissídio Individual — rito ordinário e sumaríssimo</div>
+          <div class="topic-item">Dissídio Coletivo</div>
+          <div class="topic-item">Reclamação Trabalhista — petição e resposta</div>
+          <div class="topic-item">Notificação e Citação no Processo do Trabalho</div>
+          <div class="topic-item">Audiência Trabalhista</div>
+          <div class="topic-item">Instrução Processual e Provas</div>
+          <div class="topic-item">Sentença Trabalhista e seus Efeitos</div>
+          <div class="topic-item">Recursos no Processo do Trabalho</div>
+          <div class="topic-item">Recurso Ordinário</div>
+          <div class="topic-item">Recurso de Revista</div>
+          <div class="topic-item">Agravo de Instrumento</div>
+          <div class="topic-item">Embargos de Declaração</div>
+          <div class="topic-item">Execução Trabalhista</div>
+          <div class="topic-item">Liquidação de Sentença</div>
+          <div class="topic-item">Tutela de Urgência e Tutela de Evidência</div>
+          <div class="topic-item">IRDR — Incidente de Resolução de Demandas Repetitivas</div>
+          <div class="topic-item">IAC — Incidente de Assunção de Competência</div>
+          <div class="topic-item">Mandado de Segurança na Justiça do Trabalho</div>
+          <div class="topic-item">Ação Civil Pública Trabalhista</div>
+          <div class="topic-item">Ação Rescisória</div>
+          <div class="topic-item">Cumprimento de Sentença</div>
+          <div class="topic-item">Processo Eletrônico (PJe) e Jurisprudência do TST</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Direito Constitucional -->
+    <details>
+      <summary>
+        <div class="section-icon" style="background:rgba(61,191,122,.15);width:32px;height:32px;font-size:14px">🏛️</div>
+        <div><div class="sum-title c-dc">Direito Constitucional</div><div class="sum-count">23 tópicos · 10/10 editais</div></div>
+        <span class="badge-freq bg-10" style="margin-left:auto">Essencial</span>
+      </summary>
+      <div class="det-body">
+        <div class="topic-list">
+          <div class="topic-item">Princípios Fundamentais da CF/88</div>
+          <div class="topic-item">Direitos e Garantias Fundamentais</div>
+          <div class="topic-item">Direitos Individuais e Coletivos (Art. 5º)</div>
+          <div class="topic-item">Direitos Sociais (Art. 6º ao 11)</div>
+          <div class="topic-item">Direitos Políticos</div>
+          <div class="topic-item">Organização do Estado</div>
+          <div class="topic-item">Organização dos Poderes</div>
+          <div class="topic-item">Poder Legislativo — estrutura e funções</div>
+          <div class="topic-item">Poder Executivo — estrutura e funções</div>
+          <div class="topic-item">Poder Judiciário — estrutura e funções</div>
+          <div class="topic-item">Funções Essenciais à Justiça (MP, AGU, DP)</div>
+          <div class="topic-item">Controle de Constitucionalidade</div>
+          <div class="topic-item">ADI, ADC, ADPF, ADO</div>
+          <div class="topic-item">Administração Pública — princípios e regras</div>
+          <div class="topic-item">Servidores Públicos — art. 37 a 41</div>
+          <div class="topic-item">Ordem Econômica e Financeira</div>
+          <div class="topic-item">Ordem Social</div>
+          <div class="topic-item">Seguridade Social — Saúde, Previdência, Assistência</div>
+          <div class="topic-item">Emendas Constitucionais relevantes (EC 19, 45, 103)</div>
+          <div class="topic-item">Federalismo e Repartição de Competências</div>
+          <div class="topic-item">Defesa do Estado e das Instituições Democráticas</div>
+          <div class="topic-item">Processo Legislativo</div>
+          <div class="topic-item">Direitos Humanos — Tratados e CADH</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Direito Civil -->
+    <details>
+      <summary>
+        <div class="section-icon" style="background:rgba(167,139,250,.15);width:32px;height:32px;font-size:14px">📜</div>
+        <div><div class="sum-title c-civil">Direito Civil e Processual Civil</div><div class="sum-count">30 tópicos · 10/10 editais</div></div>
+        <span class="badge-freq bg-10" style="margin-left:auto">Essencial</span>
+      </summary>
+      <div class="det-body">
+        <div class="topic-list">
+          <div class="topic-item">Lei de Introdução às Normas do Direito Brasileiro (LINDB)</div>
+          <div class="topic-item">Pessoas Naturais — personalidade, capacidade</div>
+          <div class="topic-item">Pessoas Jurídicas</div>
+          <div class="topic-item">Negócio Jurídico — validade e vícios</div>
+          <div class="topic-item">Atos Jurídicos Lícitos e Ilícitos</div>
+          <div class="topic-item">Prescrição e Decadência</div>
+          <div class="topic-item">Obrigações — espécies e modalidades</div>
+          <div class="topic-item">Contratos em geral — formação e extinção</div>
+          <div class="topic-item">Contratos em espécie (compra e venda, locação, etc.)</div>
+          <div class="topic-item">Responsabilidade Civil — subjetiva e objetiva</div>
+          <div class="topic-item">Direitos Reais — posse e propriedade</div>
+          <div class="topic-item">Família — casamento, união estável</div>
+          <div class="topic-item">Sucessões — herança e legado</div>
+          <div class="topic-item">Empresa e Empresário (Livro II CC)</div>
+          <div class="topic-item">CPC/2015 — Princípios e Normas Fundamentais</div>
+          <div class="topic-item">Competência no CPC</div>
+          <div class="topic-item">Partes, Capacidade e Litisconsórcio</div>
+          <div class="topic-item">Atos Processuais, Prazos e Comunicação</div>
+          <div class="topic-item">Petição Inicial e Resposta</div>
+          <div class="topic-item">Audiências no CPC</div>
+          <div class="topic-item">Provas no CPC</div>
+          <div class="topic-item">Sentença e Coisa Julgada</div>
+          <div class="topic-item">Recursos no CPC</div>
+          <div class="topic-item">Apelação, Agravo e Embargos</div>
+          <div class="topic-item">Cumprimento de Sentença</div>
+          <div class="topic-item">Processo de Execução</div>
+          <div class="topic-item">Tutelas de Urgência e Evidência</div>
+          <div class="topic-item">Processo Coletivo e Ação Civil Pública</div>
+          <div class="topic-item">Mediação e Conciliação — Lei 13.140/2015</div>
+          <div class="topic-item">Incidente de Desconsideração da Personalidade Jurídica</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Direito Administrativo -->
+    <details>
+      <summary>
+        <div class="section-icon" style="background:rgba(251,146,60,.15);width:32px;height:32px;font-size:14px">🏢</div>
+        <div><div class="sum-title c-da">Direito Administrativo</div><div class="sum-count">29 tópicos · 10/10 editais</div></div>
+        <span class="badge-freq bg-10" style="margin-left:auto">Essencial</span>
+      </summary>
+      <div class="det-body">
+        <div class="topic-list">
+          <div class="topic-item">Princípios da Administração Pública (LIMPE + outros)</div>
+          <div class="topic-item">Poderes Administrativos</div>
+          <div class="topic-item">Ato Administrativo — conceito, elementos, espécies</div>
+          <div class="topic-item">Validade, Eficácia e Extinção dos Atos Administrativos</div>
+          <div class="topic-item">Organização da Administração Pública</div>
+          <div class="topic-item">Administração Direta e Indireta</div>
+          <div class="topic-item">Autarquias, Fundações, Empresas Públicas, SEM</div>
+          <div class="topic-item">Agentes Públicos — classificação e regimes</div>
+          <div class="topic-item">Lei 8.112/90 — Regime Jurídico dos Servidores Federais</div>
+          <div class="topic-item">Responsabilidade Civil do Estado</div>
+          <div class="topic-item">Serviços Públicos — conceito e princípios</div>
+          <div class="topic-item">Concessão e Permissão de Serviços Públicos</div>
+          <div class="topic-item">Licitações — Lei 14.133/2021</div>
+          <div class="topic-item">Contratos Administrativos</div>
+          <div class="topic-item">Bens Públicos — domínio público</div>
+          <div class="topic-item">Intervenção na Propriedade — desapropriação, tombamento</div>
+          <div class="topic-item">Controle da Administração — interno e externo</div>
+          <div class="topic-item">Controle pelo TCU</div>
+          <div class="topic-item">Processo Administrativo — Lei 9.784/99</div>
+          <div class="topic-item">Improbidade Administrativa — Lei 8.429/92</div>
+          <div class="topic-item">Lei Anticorrupção — Lei 12.846/2013</div>
+          <div class="topic-item">Lei de Acesso à Informação — Lei 12.527/2011</div>
+          <div class="topic-item">LGPD — Lei 13.709/2018</div>
+          <div class="topic-item">Convênios e Parcerias com OSC — Lei 13.019/2014</div>
+          <div class="topic-item">PPP — Parceria Público-Privada</div>
+          <div class="topic-item">Governança Pública e Integridade</div>
+          <div class="topic-item">Código de Ética — Decreto 1.171/94</div>
+          <div class="topic-item">Sustentabilidade na Administração Pública</div>
+          <div class="topic-item">Acesso à Informação e Transparência</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Língua Portuguesa -->
+    <details>
+      <summary>
+        <div class="section-icon" style="background:rgba(232,160,208,.15);width:32px;height:32px;font-size:14px">✍️</div>
+        <div><div class="sum-title c-ger">Língua Portuguesa</div><div class="sum-count">23 tópicos · 10/10 editais</div></div>
+        <span class="badge-freq bg-10" style="margin-left:auto">Essencial</span>
+      </summary>
+      <div class="det-body">
+        <div class="topic-list">
+          <div class="topic-item">Compreensão e Interpretação de Textos</div>
+          <div class="topic-item">Tipologia e Gêneros Textuais</div>
+          <div class="topic-item">Ortografia — Acordo Ortográfico 2009</div>
+          <div class="topic-item">Acentuação Gráfica</div>
+          <div class="topic-item">Morfologia — classes de palavras</div>
+          <div class="topic-item">Substantivos e Adjetivos</div>
+          <div class="topic-item">Verbos — conjugação e irregulares</div>
+          <div class="topic-item">Pronomes — emprego e colocação pronominal</div>
+          <div class="topic-item">Preposições e Conjunções</div>
+          <div class="topic-item">Sintaxe da Oração e do Período</div>
+          <div class="topic-item">Sujeito, Predicado e Complementos</div>
+          <div class="topic-item">Adjuntos Adnominal e Adverbial</div>
+          <div class="topic-item">Concordância Nominal e Verbal</div>
+          <div class="topic-item">Regência Nominal e Verbal</div>
+          <div class="topic-item">Crase</div>
+          <div class="topic-item">Pontuação</div>
+          <div class="topic-item">Coesão e Coerência Textuais</div>
+          <div class="topic-item">Figuras de Linguagem</div>
+          <div class="topic-item">Funções da Linguagem</div>
+          <div class="topic-item">Variação Linguística</div>
+          <div class="topic-item">Redação Oficial — Manual da Presidência</div>
+          <div class="topic-item">Vocabulário e Semântica</div>
+          <div class="topic-item">Sinônimos, Antônimos e Parônimos</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Raciocínio Lógico -->
+    <details>
+      <summary>
+        <div class="section-icon" style="background:rgba(232,160,208,.15);width:32px;height:32px;font-size:14px">🔢</div>
+        <div><div class="sum-title c-ger">Raciocínio Lógico e Matemática</div><div class="sum-count">27 tópicos · 10/10 editais</div></div>
+        <span class="badge-freq bg-10" style="margin-left:auto">Essencial</span>
+      </summary>
+      <div class="det-body">
+        <div class="topic-list">
+          <div class="topic-item">Lógica Proposicional — conectivos e tabelas-verdade</div>
+          <div class="topic-item">Negação de Proposições</div>
+          <div class="topic-item">Equivalências Lógicas</div>
+          <div class="topic-item">Lógica de Predicados</div>
+          <div class="topic-item">Silogismos e Argumentos</div>
+          <div class="topic-item">Diagramas Lógicos</div>
+          <div class="topic-item">Sequências e Padrões</div>
+          <div class="topic-item">Conjuntos — operações e diagramas de Venn</div>
+          <div class="topic-item">Números Inteiros e Racionais</div>
+          <div class="topic-item">MMC e MDC</div>
+          <div class="topic-item">Razão e Proporção</div>
+          <div class="topic-item">Regra de Três (simples e composta)</div>
+          <div class="topic-item">Porcentagem e Juros</div>
+          <div class="topic-item">Juros Simples e Compostos</div>
+          <div class="topic-item">Progressões Aritmética e Geométrica (PA e PG)</div>
+          <div class="topic-item">Equações e Sistemas de Equações</div>
+          <div class="topic-item">Funções — 1º e 2º grau</div>
+          <div class="topic-item">Geometria Plana — áreas e perímetros</div>
+          <div class="topic-item">Geometria Espacial — volumes</div>
+          <div class="topic-item">Trigonometria básica</div>
+          <div class="topic-item">Probabilidade</div>
+          <div class="topic-item">Análise Combinatória — permutação, combinação, arranjo</div>
+          <div class="topic-item">Estatística — média, mediana, moda, desvio</div>
+          <div class="topic-item">Interpretação de Gráficos e Tabelas</div>
+          <div class="topic-item">Problemas de Raciocínio Lógico</div>
+          <div class="topic-item">Lógica Matemática Aplicada</div>
+          <div class="topic-item">Teoria dos Grafos (básico)</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Exclusivos MPU -->
+    <details>
+      <summary>
+        <div class="section-icon" style="background:rgba(248,113,113,.15);width:32px;height:32px;font-size:14px">🔴</div>
+        <div><div class="sum-title" style="color:var(--red)">Exclusivos MPU</div><div class="sum-count">Matérias que aparecem SOMENTE no MPU</div></div>
+        <span class="badge-freq bg-1" style="margin-left:auto">Apenas MPU</span>
+      </summary>
+      <div class="det-body">
+        <div class="topic-list">
+          <div class="topic-item">Direito Penal — parte geral e especial</div>
+          <div class="topic-item">Direito Penal Militar</div>
+          <div class="topic-item">Direito Ambiental</div>
+          <div class="topic-item">Legislação Institucional do MPU</div>
+          <div class="topic-item">Lei Orgânica do MPU — LC 75/1993</div>
+          <div class="topic-item">CNMP — Conselho Nacional do MP</div>
+          <div class="topic-item">Sustentabilidade Ambiental específica do MPU</div>
+          <div class="topic-item">Controle Externo da Atividade Policial pelo MP</div>
+          <div class="topic-item">Inquérito Civil e Ação Civil Pública (MP)</div>
+          <div class="topic-item">Atribuições do MPU — MPF, MPT, MPM, MPDFT</div>
+        </div>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- ESTRATÉGIA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(240,192,64,.15)">🎯</div>
+      <div><div class="section-title">Estratégia de Priorização</div><div class="section-sub">Como distribuir o tempo de estudo</div></div>
+    </div>
+    <div class="trib-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+      <div class="trib-card" style="border-color:rgba(240,192,64,.4)">
+        <div style="font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">🔥 Prioridade Máxima</div>
+        <div style="font-size:13px;color:var(--text);margin-bottom:6px">Presença em 10/10 editais</div>
+        <div style="font-size:12px;color:var(--text-dim)">Dir. Trabalho · Processual Trabalho · Constitucional · Administrativo · Civil · Processual Civil · Português · Raciocínio Lógico</div>
+        <div style="margin-top:12px;font-size:12px;color:var(--accent)">⏱️ 60% do tempo de estudo</div>
+      </div>
+      <div class="trib-card" style="border-color:rgba(74,144,217,.4)">
+        <div style="font-size:11px;color:var(--blue);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">📌 Alta Prioridade</div>
+        <div style="font-size:13px;color:var(--text);margin-bottom:6px">Presença em 8-9/10 editais</div>
+        <div style="font-size:12px;color:var(--text-dim)">Lei 8.112/90 · LINDB · LAI · Direitos Humanos · Informática</div>
+        <div style="margin-top:12px;font-size:12px;color:var(--blue)">⏱️ 25% do tempo de estudo</div>
+      </div>
+      <div class="trib-card" style="border-color:rgba(46,196,182,.4)">
+        <div style="font-size:11px;color:var(--teal);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">📎 Média Prioridade</div>
+        <div style="font-size:13px;color:var(--text);margin-bottom:6px">Presença em 5-7/10 editais</div>
+        <div style="font-size:12px;color:var(--text-dim)">Sustentabilidade · Ética · Precedentes IRDR/IAC · Teses STF</div>
+        <div style="margin-top:12px;font-size:12px;color:var(--teal)">⏱️ 10% do tempo de estudo</div>
+      </div>
+      <div class="trib-card" style="border-color:rgba(248,113,113,.3)">
+        <div style="font-size:11px;color:var(--red);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">🔴 Somente se for MPU</div>
+        <div style="font-size:13px;color:var(--text);margin-bottom:6px">Exclusivos do MPU</div>
+        <div style="font-size:12px;color:var(--text-dim)">Penal · Penal Militar · Ambiental · Legislação MPU · LC 75/93</div>
+        <div style="margin-top:12px;font-size:12px;color:var(--red)">⏱️ Apenas para candidatos ao MPU</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <strong>Conteúdo Programático Completo — TRTs e MPU</strong><br>
+  Baseado na leitura integral de 10 editais oficiais · TRT 1, 2, 6, 7, 10, 15, 20, 24 (AJAJ e TA) + MPU<br>
+  Analista Judiciário (Área Judiciária) e Técnico Administrativo<br><br>
+  <em>Este material é um guia de orientação estratégica de estudos, não substitui a leitura do edital oficial do seu concurso.</em>
+</footer>
+
+</body>
+</html>
